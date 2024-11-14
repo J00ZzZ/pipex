@@ -6,11 +6,11 @@
 /*   By: liyu-her <liyu-her@student.42kl.edy.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 10:05:53 by liyu-her          #+#    #+#             */
-/*   Updated: 2024/11/14 20:15:30 by liyu-her         ###   ########.fr       */
+/*   Updated: 2024/11/14 20:56:22 by liyu-her         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "./include/pipex.h"
 
 void	ft_execute(char *av, char **ev)
 {

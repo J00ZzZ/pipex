@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   pipex.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: liyu-her <liyu-her@student.42.kl>          +#+  +:+       +#+        */
+/*   By: liyu-her <liyu-her@student.42kl.edy.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 07:07:13 by liyu-her          #+#    #+#             */
-/*   Updated: 2024/10/15 13:46:29 by liyu-her         ###   ########.fr       */
+/*   Updated: 2024/11/14 20:57:24 by liyu-her         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PIPEX_H
 # define PIPEX_H
 
-# include "../mainlibft/libft.h"
+# include "../libft/libft.h"
 
 int		ft_file(char *av, int i);
 void	ft_exit(char *str, int i);
