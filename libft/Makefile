@@ -22,12 +22,12 @@ OBJS_DIR = ./
 OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
 
 
-.c.o: $(SRCS)
+.c.o:
 	@$(CC) $(CFLAGS) -c -o $@ $<
 
 $(NAME): $(OBJS)
 	@$(AR) $@ $^
-	@echo "\033[33m--Libft Compiled--"
+	@echo "\033[92m--Libft Compiled--\033[0m"
 
 bonus: $(OBJS_B)
 	$(AR) $(NAME) $^
@@ -39,7 +39,7 @@ clean:
 
 fclean: clean
 	@$(RM) $(NAME)
-	@echo "\033[33m--Libft Cleaned--"
+	@echo "\033[92m--Libft Cleaned--\033[0m"
 
 re: fclean all
 

@@ -1,31 +1,32 @@
 NAME = pipex
-LIBFT_PATH = mainlibft/
-LIBFT = $(LIBFT_PATH)libft.a
+
 CC = gcc
+
 RM = rm -f
-MKDIR = mkdir -p
-FSANI = -fsanitize=address -g3
-CFLAGS = -Wall -Wextra -Werror #${FSANI}
 
 SRC = pipex.c pipex_utils.c \
 
-SRCS_DIR = srcs/
-INC_DIR = inc
-OBJS_DIR = objs/
+CFLAGS = -Wall -Wextra -Werror
+
+OPTION = -I ./
 
 OBJS = $(SRC:.c=.o)
 
-$(NAME): $(OBJS) $(LIBFT)
-	@$(CC) $(CFLAGS) $(LIBFT) $(OBJS) -o $(NAME)
-	@echo "\033[33m--PS Compiled--\033[0m"
+LIBFT_PATH = ./libft/
+
+LIBFT = $(LIBFT_PATH)libft.a
 
 all: $(NAME)
 
-fsani: CFLAGS += $(FSANI)
-fsani: re
+$(NAME): $(OBJS) $(LIBFT)
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) -L$(LIBFT_PATH) -lft
+	@echo "\033[92m--PS Compiled--\033[0m"
 
 $(LIBFT):
 	@make -C $(LIBFT_PATH)
+
+%.o: %.c
+	@$(CC) $(CFLAGS) $(OPTION) -c $< -o $@
 
 bonus: all
 
@@ -35,7 +36,14 @@ clean:
 fclean: clean
 	@make -C $(LIBFT_PATH) fclean
 	@$(RM) $(NAME)
-	@echo "\033[33m--PS Cleaned--\033[0m"
+	@echo "\033[92m--PS Cleaned--\033[0m"
+
+MKDIR = mkdir -p
+
+FSANI = -fsanitize=address -g3
+
+fsani: CFLAGS += $(FSANI)
+fsani: re
 
 re: fclean all
 
